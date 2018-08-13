@@ -27,6 +27,8 @@ class Bank
         statement.bank_statement
       when "test"
         p "test"
+      when "2"
+        deposit
       when "exit"
         exit
       else

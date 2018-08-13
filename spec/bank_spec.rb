@@ -22,5 +22,11 @@ describe Bank do
       @user_input = StringIO.new("1")
       expect { @bank.command(@user_input) }.to output("date || credit || debit || balance\n#{Time.now.strftime("%d/%m/%Y")} || || #{@bank.balance}\n").to_stdout
     end
+
+    it 'if the user selects Deposit, the #deposit method is called' do
+      expect( @bank ).to receive(:deposit)
+      @user_input = StringIO.new("2")
+      @bank.command(@user_input)
+    end
   end
 end
