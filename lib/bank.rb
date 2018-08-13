@@ -7,10 +7,11 @@ class Bank
     puts "4. Exit"
   end
 
-  def command(option)
-    case option
-      when "4"
-        exit
+  def command(stdin = $stdin)
+    input = stdin.gets.chomp
+    case input
+    when "test"
+        return "test"
       else
         puts "Please select a valid option"
       end

@@ -13,9 +13,9 @@ describe Bank do
 
   describe '#command' do
     it 'should take stdin from the user or a StringIO object for tests' do
-      @user_input = StringIO.new("1")
+      @user_input = StringIO.new("test")
       @input_received = @bank.command(@user_input)
-      expect(@input_received).to eq("1")
+      expect(@input_received).to eq("test")
     end
   end
 end
