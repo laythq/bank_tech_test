@@ -1,6 +1,7 @@
 require 'date'
 require_relative 'statement'
 require_relative 'deposit'
+require_relative 'withdrawal'
 
 class Bank
 
@@ -41,14 +42,15 @@ class Bank
   def deposit(stdin = $stdin)
     amount = stdin.gets.chomp
     @balance += amount.to_i
-    # date = stdin.gets.chomp
     new_deposit = Deposit.new(@balance)
     push_to_activity(new_deposit)
   end
 
   def withdraw(stdin = $stdin)
-    input = stdin.gets.chomp
-    @balance += input.to_i
+    amount = stdin.gets.chomp
+    @balance += amount.to_i
+    new_withdrawal = Withdrawal.new(@balance)
+    push_to_activity(new_withdrawal)
   end
 
   def push_to_activity(object)
