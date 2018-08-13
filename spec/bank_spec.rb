@@ -35,4 +35,12 @@ describe Bank do
       @bank.command(@user_input)
     end
   end
+
+  describe '#deposit' do
+    it 'should create a new Deposit object with a date and time' do
+    deposit = class_double("Deposit").as_stubbed_const
+    expect(deposit).to receive(:new)
+    subject.deposit
+  end
+  end
 end

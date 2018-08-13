@@ -2,8 +2,7 @@ class Deposit
 
   attr_reader :date, :amount
 
-  def initialize(date, amount)
-    @date = date
+  def initialize(amount)
     @amount = amount
   end
 
