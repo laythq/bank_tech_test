@@ -18,7 +18,7 @@ describe Bank do
       expect(@input_received).to eq("test")
     end
 
-    it 'if the user selects Show Balance, their account details will be printed' do
+    it 'if the user selects bank_statement, their account details will be printed' do
       @user_input = StringIO.new("1")
       expect { @bank.command(@user_input) }.to output("date || credit || debit || balance\n#{Time.now.strftime("%d/%m/%Y")} || || 0.00\n").to_stdout
     end

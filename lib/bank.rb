@@ -16,7 +16,7 @@ class Bank
     input = stdin.gets.chomp
     case input
       when "1"
-        show_balance
+        bank_statement
       when "test"
         p "test"
       when "exit"
@@ -26,7 +26,7 @@ class Bank
     end
   end
 
-  def show_balance
+  def bank_statement
     puts "date || credit || debit || balance"
     puts "#{Time.now.strftime("%d/%m/%Y")} || || 0.00"
   end
