@@ -42,12 +42,17 @@ class Bank
     amount = stdin.gets.chomp
     @balance += amount.to_i
     # date = stdin.gets.chomp
-    @activity.push(Deposit.new(@balance))
+    new_deposit = Deposit.new(@balance)
+    push_to_activity(new_deposit)
   end
 
   def withdraw(stdin = $stdin)
     input = stdin.gets.chomp
     @balance += input.to_i
+  end
+
+  def push_to_activity(object)
+    @activity.push(object)
   end
 
   def interactive_menu(stdin = $stdin)

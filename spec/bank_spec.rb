@@ -43,13 +43,19 @@ describe Bank do
       expect(deposit).to receive(:new)
       subject.deposit
     end
+
+    it 'should call the #push_to_activity method' do
+      expect(@bank).to receive(:push_to_activity)
+      @bank.deposit
+    end
+
   end
 
   describe '#push_to_activity' do
     it 'should add a new activity to the activity array' do
       deposit = instance_double("Deposit")
       @bank.push_to_activity(deposit)
-      expect(@bank.activity).to include(object)
+      expect(@bank.activity).to include(deposit)
     end
   end
 end
