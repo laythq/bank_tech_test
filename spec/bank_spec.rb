@@ -17,5 +17,10 @@ describe Bank do
       @input_received = @bank.command(@user_input)
       expect(@input_received).to eq("test")
     end
+
+    it 'if the user selects Show Balance, their account details will be printed' do
+      @user_input = StringIO.new("1")
+      expect(@bank.command(@user_input)).to eq "Balance"
+    end
   end
 end

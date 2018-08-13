@@ -13,6 +13,8 @@ class Bank
     # input = input.chomp
     input = stdin.gets.chomp
     case input
+      when "1"
+        show_balance
       when "test"
         p "test"
       when "exit"
@@ -20,6 +22,10 @@ class Bank
       else
         p "Please select a valid option"
     end
+  end
+
+  def show_balance
+    p "Balance"
   end
 
   def interactive_menu(stdin = $stdin)
