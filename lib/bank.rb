@@ -1,4 +1,5 @@
 require 'date'
+require 'statement'
 
 class Bank
 
@@ -16,7 +17,7 @@ class Bank
     input = stdin.gets.chomp
     case input
       when "1"
-        bank_statement
+        Statement.bank_statement
       when "test"
         p "test"
       when "exit"
@@ -24,11 +25,6 @@ class Bank
       else
         p "Please select a valid option"
     end
-  end
-
-  def bank_statement
-    puts "date || credit || debit || balance"
-    puts "#{Time.now.strftime("%d/%m/%Y")} || || 0.00"
   end
 
   def interactive_menu(stdin = $stdin)
