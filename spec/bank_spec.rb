@@ -20,8 +20,11 @@ describe Bank do
     end
 
     it 'if the user selects Show Balance, their account details will be printed' do
+      statement = class_double("Statement").as_stubbed_const
+      expect(statement).to receive(:new)
+      # expect(statement).to receive(:bank_statement)
       @user_input = StringIO.new("1")
-      expect { @bank.command(@user_input) }.to output("date || credit || debit || balance\n#{Time.now.strftime("%d/%m/%Y")} || || #{@bank.balance}\n").to_stdout
+      @bank.command(@user_input)
     end
 
     it 'if the user selects Deposit, the #deposit method is called' do
