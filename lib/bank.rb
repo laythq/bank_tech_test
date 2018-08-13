@@ -26,7 +26,7 @@ class Bank
     input = stdin.gets.chomp
     case input
       when "1"
-        statement = Statement.new(@balance)
+        statement = Statement.new(@balance, @activity)
         statement.bank_statement
       when "test"
         p "test"

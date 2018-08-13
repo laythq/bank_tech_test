@@ -1,9 +1,9 @@
 class Withdrawal
 
-    attr_reader :amount, :date
+    attr_reader :debit, :date
 
   def initialize(amount, date = Time.now.strftime("%d/%m/%Y"))
-    @amount = amount
+    @debit = amount
     @date = date
   end
 end

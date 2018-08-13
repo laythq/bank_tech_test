@@ -1,9 +1,9 @@
 class Deposit
 
-  attr_reader :date, :amount
+  attr_reader :date, :credit
 
   def initialize(amount, date = Time.now.strftime("%d/%m/%Y"))
-    @amount = amount
+    @credit = amount
     @date = date
   end
 

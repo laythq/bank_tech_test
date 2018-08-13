@@ -5,8 +5,9 @@ class Statement
 
   attr_reader :balance
 
-  def initialize(balance = 0)
+  def initialize(balance = 0, activity = [])
     @balance = balance
+    @activity = activity
   end
 
 def bank_statement
@@ -15,3 +16,7 @@ def bank_statement
 end
 
 end
+#
+# activity.each do {|x|
+#   puts "#{x.date} || #{x.}"
+# }
