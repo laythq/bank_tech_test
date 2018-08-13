@@ -7,4 +7,13 @@ class Bank
     puts "4. Exit"
   end
 
+  def command(option)
+    case option
+      when "4"
+        exit
+      else
+        puts "Please select a valid option"
+      end
+  end
+
 end
