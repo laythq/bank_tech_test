@@ -5,6 +5,7 @@ class Bank
 
   def initialize
     @statement = Statement.new
+    @balance = 0
   end
 
   def show_options
