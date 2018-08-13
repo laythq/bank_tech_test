@@ -1,5 +1,5 @@
 require 'date'
-# require_relative 'statement'
+require_relative 'statement'
 require_relative 'deposit'
 
 class Bank
