@@ -3,6 +3,10 @@ require 'statement'
 
 class Bank
 
+  def initialize
+    @statement = Statement.new
+  end
+
   def show_options
     puts "1. Bank Statement"
     puts "2. Deposit"
@@ -17,7 +21,7 @@ class Bank
     input = stdin.gets.chomp
     case input
       when "1"
-        Statement.bank_statement
+        @statement.bank_statement
       when "test"
         p "test"
       when "exit"
