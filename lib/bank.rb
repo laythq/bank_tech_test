@@ -27,7 +27,8 @@ class Bank
   end
 
   def show_balance
-    p "date || credit || debit || balance \n #{Time.now.strftime("%d/%m/%Y")} || || 0.00"
+    puts "date || credit || debit || balance"
+    puts "#{Time.now.strftime("%d/%m/%Y")} || || 0.00"
   end
 
   def interactive_menu(stdin = $stdin)
