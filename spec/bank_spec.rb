@@ -7,7 +7,7 @@ describe Bank do
 
   describe '#show_options' do
     it 'should print a list of options to the console' do
-      expect { @bank.show_options }.to output("1. Show Balance\n2. Deposit\n3. Withdrawal\n4. Exit\n").to_stdout
+      expect { @bank.show_options }.to output("1. Bank Statement\n2. Deposit\n3. Withdrawal\n4. Exit\n").to_stdout
     end
   end
 
@@ -20,7 +20,7 @@ describe Bank do
 
     it 'if the user selects Show Balance, their account details will be printed' do
       @user_input = StringIO.new("1")
-      expect(@bank.command(@user_input)).to eq "Balance"
+      expect(@bank.command(@user_input)).to eq "date || credit || debit || balance \n #{Time.now.strftime("%d/%m/%Y")} || || 0.00"
     end
   end
 end

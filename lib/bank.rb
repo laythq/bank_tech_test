@@ -1,7 +1,9 @@
+require 'date'
+
 class Bank
 
   def show_options
-    puts "1. Show Balance"
+    puts "1. Bank Statement"
     puts "2. Deposit"
     puts "3. Withdrawal"
     puts "4. Exit"
@@ -25,7 +27,7 @@ class Bank
   end
 
   def show_balance
-    p "Balance"
+    p "date || credit || debit || balance \n #{Time.now.strftime("%d/%m/%Y")} || || 0.00"
   end
 
   def interactive_menu(stdin = $stdin)
