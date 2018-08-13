@@ -50,6 +50,19 @@ describe Bank do
     end
   end
 
+  describe '#withdraw' do
+    it 'should create a new Deposit object with a date and time' do
+      withdrawal = class_double("Withdrawal").as_stubbed_const
+      expect(withdrawal).to receive(:new)
+      subject.withdraw
+    end
+
+    it 'should call the #push_to_activity method' do
+      expect(@bank).to receive(:push_to_activity)
+      @bank.withdraw
+    end
+  end
+
   describe '#push_to_activity' do
     it 'should add a new activity to the activity array' do
       deposit = instance_double("Deposit")
