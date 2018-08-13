@@ -28,5 +28,11 @@ describe Bank do
       @user_input = StringIO.new("2")
       @bank.command(@user_input)
     end
+
+    it 'if the user selects Withdraw, the #withdraw method is called' do
+      expect( @bank ).to receive(:withdraw)
+      @user_input = StringIO.new("3")
+      @bank.command(@user_input)
+    end
   end
 end
