@@ -3,6 +3,7 @@ require 'bank'
 describe Bank do
   before(:each) do
     @bank = Bank.new
+    allow(STDIN).to receive(:gets).and_return('100')
   end
 
   describe '#show_options' do
@@ -38,9 +39,17 @@ describe Bank do
 
   describe '#deposit' do
     it 'should create a new Deposit object with a date and time' do
-    deposit = class_double("Deposit").as_stubbed_const
-    expect(deposit).to receive(:new)
-    subject.deposit
+      deposit = class_double("Deposit").as_stubbed_const
+      expect(deposit).to receive(:new)
+      subject.deposit
+    end
   end
+
+  describe '#push_to_activity' do
+    it 'should add a new activity to the activity array' do
+      deposit = instance_double("Deposit")
+      @bank.push_to_activity(deposit)
+      expect(@bank.activity).to include(object)
+    end
   end
 end

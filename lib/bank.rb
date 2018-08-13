@@ -1,10 +1,10 @@
 require 'date'
-require_relative 'statement'
+# require_relative 'statement'
 require_relative 'deposit'
 
 class Bank
 
-  attr_reader :balance, :activity
+  attr_accessor :balance, :activity
 
   def initialize
     @balance = 0
@@ -42,7 +42,7 @@ class Bank
     amount = stdin.gets.chomp
     @balance += amount.to_i
     # date = stdin.gets.chomp
-    Deposit.new(@balance)
+    @activity.push(Deposit.new(@balance))
   end
 
   def withdraw(stdin = $stdin)
