@@ -22,8 +22,7 @@ describe Bank do
   describe '#interactive_menu' do
     it 'should present a list of options and ask for user input' do
       @user_input = StringIO.new("test")
-      @input_received = @bank.command(@user_input)
-      expect (@bank.interactive_menu).to eq(@input_received)
+      expect(@bank.interactive_menu(@user_input)).to eq("test")
     end
   end
 end

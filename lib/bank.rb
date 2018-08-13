@@ -17,4 +17,9 @@ class Bank
     end
   end
 
+  def interactive_menu(stdin = $stdin)
+    show_options
+    command(stdin)
+  end
+
 end
