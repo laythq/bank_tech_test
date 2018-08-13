@@ -10,11 +10,11 @@ class Bank
   def command(stdin = $stdin)
     input = stdin.gets.chomp
     case input
-    when "test"
-        return "test"
+      when "test"
+          return "test"
       else
-        puts "Please select a valid option"
-      end
+          puts "Please select a valid option"
+    end
   end
 
 end
