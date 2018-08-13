@@ -1,5 +1,4 @@
 require 'date'
-require 'bank'
 
 class Statement
 
@@ -12,11 +11,9 @@ class Statement
 
 def bank_statement
   puts "date || credit || debit || balance"
-  puts "#{Time.now.strftime("%d/%m/%Y")} || || #{@balance}"
+  @activity.each {|x|
+    puts "#{x.date} || #{x.credit} || #{x.debit} || #{@balance}" }
+
 end
 
 end
-#
-# activity.each do {|x|
-#   puts "#{x.date} || #{x.}"
-# }
