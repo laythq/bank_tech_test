@@ -6,7 +6,6 @@ class Bank
   attr_reader :balance
 
   def initialize
-    @statement = Statement.new
     @balance = 0
   end
 
@@ -24,7 +23,8 @@ class Bank
     input = stdin.gets.chomp
     case input
       when "1"
-        @statement.bank_statement
+        statement = Statement.new(@balance)
+        statement.bank_statement
       when "test"
         p "test"
       when "exit"
