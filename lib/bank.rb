@@ -1,7 +1,9 @@
 require 'date'
-require 'statement'
+require_relative 'statement'
 
 class Bank
+
+  attr_reader :balance
 
   def initialize
     @statement = Statement.new
@@ -30,6 +32,11 @@ class Bank
       else
         p "Please select a valid option"
     end
+  end
+
+  def deposit(stdin = $stdin)
+    input = stdin.gets.chomp
+    @balance += input.to_i
   end
 
   def interactive_menu(stdin = $stdin)

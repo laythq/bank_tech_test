@@ -23,10 +23,4 @@ describe Bank do
       expect { @bank.command(@user_input) }.to output("date || credit || debit || balance\n#{Time.now.strftime("%d/%m/%Y")} || || 0.00\n").to_stdout
     end
   end
-
-  describe '#deposit' do
-    @user_input = StringIO.new("100")
-    @bank.deposit(@user_input)
-    expect(subject.balance).to eq(100)
-  end
 end
