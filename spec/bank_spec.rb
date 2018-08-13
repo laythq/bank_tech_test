@@ -48,7 +48,6 @@ describe Bank do
       expect(@bank).to receive(:push_to_activity)
       @bank.deposit
     end
-
   end
 
   describe '#push_to_activity' do
