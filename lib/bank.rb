@@ -29,14 +29,19 @@ class Bank
         p "test"
       when "2"
         deposit
-      when "exit"
-        exit
+      when "3"
+        withdraw
       else
         p "Please select a valid option"
     end
   end
 
   def deposit(stdin = $stdin)
+    input = stdin.gets.chomp
+    @balance += input.to_i
+  end
+
+  def withdraw(stdin = $stdin)
     input = stdin.gets.chomp
     @balance += input.to_i
   end
