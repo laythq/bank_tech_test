@@ -18,11 +18,4 @@ describe Bank do
       expect(@input_received).to eq("test")
     end
   end
-
-  describe '#interactive_menu' do
-    it 'should present a list of options and ask for user input' do
-      @user_input = StringIO.new("test")
-      expect(@bank.interactive_menu(@user_input)).to eq("test")
-    end
-  end
 end

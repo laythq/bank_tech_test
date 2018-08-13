@@ -8,18 +8,25 @@ class Bank
   end
 
   def command(stdin = $stdin)
+    # input = stdin.gets
+    # input ||= ' '
+    # input = input.chomp
     input = stdin.gets.chomp
     case input
       when "test"
-          return "test"
+        p "test"
+      when "exit"
+        exit
       else
-          puts "Please select a valid option"
+        p "Please select a valid option"
     end
   end
 
   def interactive_menu(stdin = $stdin)
-    show_options
-    command(stdin)
+    loop do
+      show_options
+      command(stdin)
+    end
   end
 
 end
