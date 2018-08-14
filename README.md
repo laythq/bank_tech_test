@@ -1,3 +1,5 @@
+##### REPL: #####
+
 To access this app through a REPL, please clone this repo and run
 
 `bundle install`
@@ -21,7 +23,7 @@ Withdraw x:
 Show Statement:
 `bank.show_statement`
 
-Banking App:
+##### Command-line App: #####
 
 This command-line app can print your statement, handle deposits and handle withdrawals. Simply clone this repo and run:
 
