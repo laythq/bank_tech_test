@@ -31,11 +31,4 @@ class Bank
   def push_to_activity(object)
     @activity.push(object)
   end
-
-  def interactive_menu(stdin = $stdin)
-    loop do
-      show_options
-      command(stdin)
-    end
-  end
 end
