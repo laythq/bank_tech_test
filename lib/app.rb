@@ -5,9 +5,6 @@ class App
     @bank = Bank.new
   end
 
-  # Don't repeat Bank variables...
-  # Extract as much to Bank methods (#deposit, #withdraw as possible)
-
   def deposit(stdin = $stdin)
     puts 'How much would you like to deposit?'
     amount = stdin.gets.chomp
