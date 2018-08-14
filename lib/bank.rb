@@ -40,7 +40,7 @@ class Bank
   def deposit(stdin = $stdin)
     puts "How much would you like to deposit?"
     amount = stdin.gets.chomp
-    @balance += amount.to_i
+    @balance += amount.to_f
     new_deposit = Deposit.new(amount)
     push_to_activity(new_deposit)
   end
@@ -48,7 +48,7 @@ class Bank
   def withdraw(stdin = $stdin)
     puts "How much would you like to withdraw?"
     amount = stdin.gets.chomp
-    @balance -= amount.to_i
+    @balance -= amount.to_f
     new_withdrawal = Withdrawal.new(amount)
     push_to_activity(new_withdrawal)
   end

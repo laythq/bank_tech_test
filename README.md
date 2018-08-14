@@ -5,3 +5,5 @@ This is a banking app that can print your statement, handle deposits and handle 
 `ruby bank.rb`
 
 You will be presented with a list of different options. Enjoy!
+
+Note: please avoid the use of commas when entering integers.
