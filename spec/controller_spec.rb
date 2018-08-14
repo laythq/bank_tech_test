@@ -1,4 +1,4 @@
-require 'app'
+require 'controller'
 
 describe App do
   before(:each) do
