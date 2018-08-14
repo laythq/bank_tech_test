@@ -1,15 +1,9 @@
-require 'controller'
+require 'app'
 
 describe App do
   before(:each) do
     @app = App.new
     allow(STDIN).to receive(:gets).and_return('100')
-  end
-
-  describe '#show_options' do
-    it 'should print a list of options to the console' do
-      expect { @app.show_options }.to output("1. Bank Statement\n2. Deposit\n3. Withdrawal\n4. Exit\n").to_stdout
-    end
   end
 
   describe '#deposit' do
@@ -27,7 +21,7 @@ describe App do
       subject.withdraw
     end
   end
-
+  
   describe '#command' do
     it 'should take stdin from the user or a StringIO object for tests' do
       @user_input = StringIO.new('test')
