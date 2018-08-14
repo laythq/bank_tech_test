@@ -1,8 +1,12 @@
 Banking App:
 
-This is a banking app that can print your statement, handle deposits and handle withdrawals. Simply clone this repo and run the application through:
+This is a banking app that can print your statement, handle deposits and handle withdrawals. Simply clone this repo and run:
 
-`ruby bank.rb`
+`bundle install`
+
+Then run the application through:
+
+`ruby app.rb`
 
 You will be presented with a list of different options. Enjoy!
 

@@ -64,6 +64,3 @@ class Bank
     end
   end
 end
-
-bank = Bank.new
-bank.interactive_menu
