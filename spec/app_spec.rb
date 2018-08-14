@@ -14,14 +14,14 @@ describe App do
     end
   end
 
-   describe '#withdraw' do
+  describe '#withdraw' do
     it 'should create a new Transaction object with a date and time' do
       transaction = class_double('Transaction').as_stubbed_const
       expect(transaction).to receive(:new)
       subject.withdraw
     end
   end
-  
+
   describe '#command' do
     it 'should take stdin from the user or a StringIO object for tests' do
       @user_input = StringIO.new('test')
@@ -32,7 +32,6 @@ describe App do
     it 'if the user selects Show Balance, their account details will be printed' do
       statement = class_double('Statement').as_stubbed_const
       expect(statement).to receive(:new)
-      # expect(statement).to receive(:bank_statement)
       @user_input = StringIO.new('1')
       @app.command(@user_input)
     end
