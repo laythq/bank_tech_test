@@ -2,6 +2,10 @@ require_relative 'app'
 
 class View
 
+  def initialize
+    @app = App.new
+  end
+
   def show_options
     puts '1. Bank Statement'
     puts '2. Deposit'
@@ -12,11 +16,7 @@ class View
   def interactive_menu(stdin = $stdin)
     loop do
       show_options
-      command(stdin)
+      @app.command(stdin)
     end
   end
 end
-
-#
-# app = App.new
-# app.interactive_menu
