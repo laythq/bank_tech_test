@@ -3,8 +3,6 @@ require_relative 'bank'
 
 class App
 
-  # attr_reader :balance, :activity
-
   def initialize
     @bank = Bank.new
     @balance = 0
