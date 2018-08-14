@@ -23,29 +23,33 @@ class Bank
     input = stdin.gets.chomp
     case input
       when "1"
-        statement = Statement.new(@balance, @activity)
+        Statement.new(@balance, @activity)
       when "test"
         p "test"
       when "2"
         deposit
       when "3"
         withdraw
+      when "4"
+        exit
       else
         p "Please select a valid option"
     end
   end
 
   def deposit(stdin = $stdin)
+    puts "How much would you like to deposit?"
     amount = stdin.gets.chomp
     @balance += amount.to_i
-    new_deposit = Deposit.new(@balance)
+    new_deposit = Deposit.new(amount)
     push_to_activity(new_deposit)
   end
 
   def withdraw(stdin = $stdin)
+    puts "How much would you like to withdraw?"
     amount = stdin.gets.chomp
-    @balance += amount.to_i
-    new_withdrawal = Withdrawal.new(@balance)
+    @balance -= amount.to_i
+    new_withdrawal = Withdrawal.new(amount)
     push_to_activity(new_withdrawal)
   end
 
@@ -59,5 +63,7 @@ class Bank
       command(stdin)
     end
   end
-
 end
+
+bank = Bank.new
+bank.interactive_menu
