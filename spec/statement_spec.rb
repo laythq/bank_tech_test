@@ -7,7 +7,7 @@ describe Statement do
     deposit2 = double("Deposit", credit: 20, debit: nil, balance: 30, date: "2/1/2000")
     activity = []
     activity.push(deposit1, deposit2)
-    @statement = Statement.new(30, activity)
+    @statement = Statement.new(activity)
 
   end
 
