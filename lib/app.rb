@@ -15,7 +15,7 @@ class App
     puts "How much would you like to deposit?"
     amount = stdin.gets.chomp
     @balance += amount.to_f
-    new_deposit = Deposit.new(amount)
+    new_deposit = Deposit.new(amount, @balance)
     push_to_activity(new_deposit)
   end
 
@@ -23,7 +23,7 @@ class App
     puts "How much would you like to withdraw?"
     amount = stdin.gets.chomp
     @balance -= amount.to_f
-    new_withdrawal = Withdrawal.new(amount)
+    new_withdrawal = Withdrawal.new(amount, @balance)
     push_to_activity(new_withdrawal)
   end
 
@@ -42,7 +42,7 @@ class App
     input = stdin.gets.chomp
     case input
       when "1"
-        Statement.new(@balance, @activity)
+        Statement.new(@activity)
       when "test"
         p "test"
       when "2"
