@@ -5,7 +5,7 @@ require_relative 'withdrawal'
 
 class Bank
 
-  attr_accessor :balance, :activity
+  attr_reader :balance, :activity
 
   def initialize
     @balance = 0
