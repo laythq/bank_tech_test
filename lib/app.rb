@@ -52,7 +52,11 @@ class App
     end
   end
 
-end
+  def interactive_menu(stdin = $stdin)
+    loop do
+      show_options
+      command(stdin)
+    end
+  end
 
-app = App.new
-app.interactive_menu
+end
