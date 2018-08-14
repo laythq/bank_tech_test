@@ -26,6 +26,8 @@ class Bank
     Statement.new(@activity)
   end
 
+  private
+
   def push_to_activity(object)
     @activity.push(object)
   end
