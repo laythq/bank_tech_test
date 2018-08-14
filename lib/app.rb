@@ -28,7 +28,7 @@ class App
     input = stdin.gets.chomp
     case input
     when '1'
-      Statement.new(@bank.activity)
+      @bank.show_statement
     when '2'
       deposit
     when '3'
@@ -46,5 +46,4 @@ class App
       command(stdin)
     end
   end
-
 end
