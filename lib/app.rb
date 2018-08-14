@@ -19,9 +19,7 @@ class App
   def withdraw(stdin = $stdin)
     puts 'How much would you like to withdraw?'
     amount = stdin.gets.chomp
-    @balance -= amount.to_f
-    new_withdrawal = Transaction.new(0, amount, @balance)
-    push_to_activity(new_withdrawal)
+    @bank.withdraw(amount.to_f)
   end
 
   def push_to_activity(object)

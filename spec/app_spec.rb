@@ -26,11 +26,6 @@ describe App do
       expect(transaction).to receive(:new)
       subject.withdraw
     end
-
-     it 'should call the #push_to_activity method' do
-      expect(subject).to receive(:push_to_activity)
-      subject.withdraw
-    end
   end
 
   describe '#command' do
