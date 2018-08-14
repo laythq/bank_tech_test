@@ -3,8 +3,6 @@ require_relative 'bank'
 class App
   def initialize
     @bank = Bank.new
-    @balance = 0
-    @activity = []
   end
 
   # Don't repeat Bank variables...
@@ -22,10 +20,6 @@ class App
     @bank.withdraw(amount.to_f)
   end
 
-  def push_to_activity(object)
-    @activity.push(object)
-  end
-
   def show_options
     puts '1. Bank Statement'
     puts '2. Deposit'
@@ -37,7 +31,7 @@ class App
     input = stdin.gets.chomp
     case input
     when '1'
-      Statement.new(@activity)
+      Statement.new(@bank.activity)
     when '2'
       deposit
     when '3'
