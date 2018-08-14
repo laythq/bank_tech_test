@@ -8,11 +8,11 @@ Open irb from the root directory and run the following:
 
 `require './lib/bank.rb'`
 
-Initialize a new bank with the following code:
+Initialize a new bank with:
 
 `bank = Bank.new`
 
-You can now run the following commands to interact with the app
+You can now run these commands to interact with the app
 
 Deposit x:
 
