@@ -20,6 +20,10 @@ describe Bank do
   end
 
   describe 'Making a deposit, a withdrawa, and printing a new statement' do
-
+    it 'should print the statement with the correct sum' do
+      @bank.deposit(100)
+      @bank.withdraw(50)
+      expect { @bank.show_statement }.to output("date || credit || debit || balance\n#{@date} ||  || 50 || 50\n#{@date} || 100 ||  || 100\n").to_stdout
+    end
   end
 end
