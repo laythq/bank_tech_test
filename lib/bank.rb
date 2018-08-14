@@ -11,18 +11,14 @@ class Bank
     @activity = []
   end
 
-  def deposit(stdin = $stdin)
-    puts "How much would you like to deposit?"
-    amount = stdin.gets.chomp
-    @balance += amount.to_f
+  def deposit(amount)
+    @balance += amount
     new_deposit = Transaction.new(amount, 0, @balance)
     push_to_activity(new_deposit)
   end
 
-  def withdraw(stdin = $stdin)
-    puts "How much would you like to withdraw?"
-    amount = stdin.gets.chomp
-    @balance -= amount.to_f
+  def withdraw(amount)
+    @balance -= amount
     new_withdrawal = Transaction.new(0, amount, @balance)
     push_to_activity(new_withdrawal)
   end
