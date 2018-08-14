@@ -15,12 +15,15 @@ Initialize a new bank with the following code:
 You can now run the following commands to interact with the app
 
 Deposit x:
+
 `bank.deposit(x)`
 
 Withdraw x:
+
 `bank.withdraw(x)`
 
 Show Statement:
+
 `bank.show_statement`
 
 ##### Command-line App: #####
