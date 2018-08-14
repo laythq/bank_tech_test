@@ -11,7 +11,7 @@ class Statement
 
 def bank_statement
   puts "date || credit || debit || balance"
-  @activity.each {|x|
+  @activity.reverse.each {|x|
     puts "#{x.date} || #{x.credit} || #{x.debit} || #{x.balance}" }
 end
 
