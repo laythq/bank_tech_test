@@ -19,7 +19,6 @@ describe Bank do
       expect(transaction).to receive(:new)
       @bank.deposit(100)
     end
-
   end
 
   describe '#withdraw' do
