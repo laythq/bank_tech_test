@@ -3,7 +3,6 @@ require_relative 'statement'
 require_relative 'transaction'
 
 class Bank
-
   attr_reader :balance, :activity
 
   def initialize

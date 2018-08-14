@@ -1,8 +1,6 @@
 require_relative 'bank'
 
-
 class App
-
   def initialize
     @bank = Bank.new
     @balance = 0
@@ -10,7 +8,7 @@ class App
   end
 
   def deposit(stdin = $stdin)
-    puts "How much would you like to deposit?"
+    puts 'How much would you like to deposit?'
     amount = stdin.gets.chomp
     @balance += amount.to_f
     new_deposit = Transaction.new(amount, 0, @balance)
@@ -18,7 +16,7 @@ class App
   end
 
   def withdraw(stdin = $stdin)
-    puts "How much would you like to withdraw?"
+    puts 'How much would you like to withdraw?'
     amount = stdin.gets.chomp
     @balance -= amount.to_f
     new_withdrawal = Transaction.new(0, amount, @balance)
@@ -30,27 +28,25 @@ class App
   end
 
   def show_options
-    puts "1. Bank Statement"
-    puts "2. Deposit"
-    puts "3. Withdrawal"
-    puts "4. Exit"
+    puts '1. Bank Statement'
+    puts '2. Deposit'
+    puts '3. Withdrawal'
+    puts '4. Exit'
   end
 
   def command(stdin = $stdin)
     input = stdin.gets.chomp
     case input
-      when "1"
-        Statement.new(@activity)
-      when "test"
-        p "test"
-      when "2"
-        deposit
-      when "3"
-        withdraw
-      when "4"
-        exit
-      else
-        p "Please select a valid option"
+    when '1'
+      Statement.new(@activity)
+    when '2'
+      deposit
+    when '3'
+      withdraw
+    when '4'
+      exit
+    else
+      p 'Please select a valid option'
     end
   end
 

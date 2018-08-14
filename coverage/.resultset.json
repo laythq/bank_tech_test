@@ -34,6 +34,7 @@
         1,
         1,
         null,
+        null,
         1,
         1,
         1,
@@ -72,11 +73,7 @@
       "/Users/Layth/Projects/bank_tech_test/lib/app.rb": [
         1,
         null,
-        null,
         1,
-        null,
-        null,
-        null,
         1,
         13,
         13,
@@ -120,11 +117,9 @@
         null,
         1,
         null,
+        0,
+        null,
         1,
-        null,
-        0,
-        null,
-        0,
         null,
         null,
         null,
@@ -143,7 +138,6 @@
         1,
         null,
         1,
-        null,
         1,
         null,
         1,
@@ -205,7 +199,6 @@
         5,
         5,
         5,
-        null,
         null,
         null
       ],
@@ -296,6 +289,6 @@
         null
       ]
     },
-    "timestamp": 1534249539
+    "timestamp": 1534250076
   }
 }
