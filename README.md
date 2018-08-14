@@ -34,7 +34,7 @@ This command-line app can print your statement, handle deposits and handle withd
 
 Then run the application through:
 
-`ruby interface.rb`
+`ruby view.rb`
 
 You will be presented with a list of different options. Enjoy!
 
