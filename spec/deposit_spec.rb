@@ -1,12 +1,12 @@
-require 'deposit'
+require 'transaction'
 
-describe Deposit do
+describe Transaction do
 
 describe 'Initialization' do
-  it 'each Deposit object is initialized with a date and an amount' do
-    deposit = Deposit.new(100, 0, "1/1/2000")
-    expect(deposit.credit).to eq(100)
-    expect(deposit.date).to eq("1/1/2000")
+  it 'each Transaction object is initialized with a debit/credit sum, a balance at time of transaction, and a date' do
+    transaction = Transaction.new(100, 0, "1/1/2000")
+    expect(transaction.credit).to eq(100)
+    expect(transaction.date).to eq("1/1/2000")
   end
 end
 end

@@ -1,6 +1,6 @@
 class Deposit
 
-  attr_reader :date, :credit, :debit
+  attr_reader :date, :credit, :debit, :balance
 
   def initialize(amount, balance, date = Time.now.strftime("%d/%m/%Y"))
     @credit = amount
