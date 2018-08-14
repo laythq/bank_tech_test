@@ -1,7 +1,6 @@
 require 'date'
 require_relative 'statement'
-require_relative 'deposit'
-require_relative 'withdrawal'
+require_relative 'transaction'
 
 class Bank
 
@@ -16,7 +15,7 @@ class Bank
     puts "How much would you like to deposit?"
     amount = stdin.gets.chomp
     @balance += amount.to_f
-    new_deposit = Deposit.new(amount, @balance)
+    new_deposit = Transaction.new(amount, @balance)
     push_to_activity(new_deposit)
   end
 
@@ -24,7 +23,7 @@ class Bank
     puts "How much would you like to withdraw?"
     amount = stdin.gets.chomp
     @balance -= amount.to_f
-    new_withdrawal = Withdrawal.new(amount, @balance)
+    new_withdrawal = Transaction.new(amount, @balance)
     push_to_activity(new_withdrawal)
   end
 

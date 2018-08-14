@@ -7,9 +7,9 @@ describe Bank do
   end
 
   describe '#deposit' do
-    it 'should create a new Deposit object with a date and time' do
-      deposit = class_double("Deposit").as_stubbed_const
-      expect(deposit).to receive(:new)
+    it 'should create a new Transaction object with a date and time' do
+      transaction = class_double("Transaction").as_stubbed_const
+      expect(transaction).to receive(:new)
       subject.deposit
     end
 
@@ -20,9 +20,9 @@ describe Bank do
   end
 
   describe '#withdraw' do
-    it 'should create a new Deposit object with a date and time' do
-      withdrawal = class_double("Withdrawal").as_stubbed_const
-      expect(withdrawal).to receive(:new)
+    it 'should create a new Transaction object with a date and time' do
+      transaction = class_double("Transaction").as_stubbed_const
+      expect(transaction).to receive(:new)
       subject.withdraw
     end
 
@@ -34,9 +34,9 @@ describe Bank do
 
   describe '#push_to_activity' do
     it 'should add a new activity to the activity array' do
-      deposit = instance_double("Deposit")
-      @bank.push_to_activity(deposit)
-      expect(@bank.activity).to include(deposit)
+      transaction = instance_double("Transaction")
+      @bank.push_to_activity(transaction)
+      expect(@bank.activity).to include(transaction)
     end
   end
 end
