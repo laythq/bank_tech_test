@@ -3,12 +3,12 @@ require_relative 'bank'
 
 class App
 
-  attr_reader :balance, :activity
+  # attr_reader :balance, :activity
 
   def initialize
     @bank = Bank.new
     @balance = 0
-    @activity = 0
+    @activity = []
   end
 
   def deposit(stdin = $stdin)
