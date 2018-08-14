@@ -18,10 +18,6 @@ describe App do
       expect(transaction).to receive(:new)
       subject.deposit
     end
-     it 'should call the #push_to_activity method' do
-      expect(subject).to receive(:push_to_activity)
-      subject.deposit
-    end
   end
 
    describe '#withdraw' do

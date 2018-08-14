@@ -7,12 +7,13 @@ class App
     @activity = []
   end
 
+  # Don't repeat Bank variables...
+  # Extract as much to Bank methods (#deposit, #withdraw as possible)
+
   def deposit(stdin = $stdin)
     puts 'How much would you like to deposit?'
     amount = stdin.gets.chomp
-    @balance += amount.to_f
-    new_deposit = Transaction.new(amount, 0, @balance)
-    push_to_activity(new_deposit)
+    @bank.deposit(amount.to_f)
   end
 
   def withdraw(stdin = $stdin)
