@@ -2,7 +2,6 @@ require 'statement'
 
 describe Statement do
   before(:each) do
-
     deposit1 = double("Transaction", credit: 10, debit: nil, balance: 10, date: "1/1/2000")
     deposit2 = double("Transaction", credit: 20, debit: nil, balance: 30, date: "2/1/2000")
     activity = []

@@ -3,7 +3,14 @@ require 'bank'
 describe Bank do
   before(:each) do
     @bank = Bank.new
-    # allow(STDIN).to receive(:gets).and_return('100')
+  end
+
+  describe '#show_statement' do
+    it 'should create a new statement object' do
+      statement = class_double("Statement").as_stubbed_const
+      expect(statement).to receive(:new)
+      subject.show_statement
+    end
   end
 
   describe '#deposit' do
