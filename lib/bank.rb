@@ -15,7 +15,7 @@ class Bank
     puts "How much would you like to deposit?"
     amount = stdin.gets.chomp
     @balance += amount.to_f
-    new_deposit = Transaction.new(amount, @balance)
+    new_deposit = Transaction.new(amount, 0, @balance)
     push_to_activity(new_deposit)
   end
 
@@ -23,7 +23,7 @@ class Bank
     puts "How much would you like to withdraw?"
     amount = stdin.gets.chomp
     @balance -= amount.to_f
-    new_withdrawal = Transaction.new(amount, @balance)
+    new_withdrawal = Transaction.new(0, amount, @balance)
     push_to_activity(new_withdrawal)
   end
 

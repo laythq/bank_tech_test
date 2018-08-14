@@ -14,7 +14,7 @@ describe Statement do
 
 describe '#bank_statement' do
   it 'shows the balance at time of each transaction' do
-    expect { @statement.bank_statement }. to output("date || credit || debit || balance\n1/1/2000 || 10 ||  || 10\n2/1/2000 || 20 ||  || 30\n").to_stdout
+    expect { @statement.bank_statement }. to output("date || credit || debit || balance\n2/1/2000 || 20 ||  || 30\n1/1/2000 || 10 ||  || 10\n").to_stdout
   end
 end
 end
