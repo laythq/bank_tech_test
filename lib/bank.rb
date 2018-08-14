@@ -12,13 +12,13 @@ class Bank
 
   def deposit(amount)
     @balance += amount
-    new_deposit = Transaction.new(amount, 0, @balance)
+    new_deposit = Transaction.new(amount, nil, @balance)
     push_to_activity(new_deposit)
   end
 
   def withdraw(amount)
     @balance -= amount
-    new_withdrawal = Transaction.new(0, amount, @balance)
+    new_withdrawal = Transaction.new(nil, amount, @balance)
     push_to_activity(new_withdrawal)
   end
 
