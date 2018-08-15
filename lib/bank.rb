@@ -3,33 +3,32 @@ require_relative 'statement'
 require_relative 'transaction'
 
 class Bank
-  attr_reader :balance, :activity
+  attr_reader :balance
 
   def initialize
     @balance = 0
-    @activity = []
+    @all_transactions = []
   end
 
   def deposit(amount)
     @balance += amount
-    new_deposit = Transaction.new(amount, 0, @balance)
-    push_to_activity(new_deposit)
-    'Deposit confirmed'
+    new_deposit = Transaction.new(amount, nil, @balance)
+    record_transaction(new_deposit)
   end
 
   def withdraw(amount)
     @balance -= amount
-    new_withdrawal = Transaction.new(0, amount, @balance)
-    push_to_activity(new_withdrawal)
-    'Withdrawal confirmed'
+    new_withdrawal = Transaction.new(nil, amount, @balance)
+    record_transaction(new_withdrawal)
   end
 
   def show_statement
-    Statement.new(@activity)
-    'End of Statement'
+    Statement.new(@all_transactions)
   end
 
-  def push_to_activity(object)
-    @activity.push(object)
+  private
+
+  def record_transaction(object)
+    @all_transactions.push(object)
   end
 end
