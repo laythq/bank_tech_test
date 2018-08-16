@@ -1,8 +1,8 @@
 require_relative 'bank'
 
 class App
-  def initialize
-    @bank = Bank.new
+  def initialize(bank = Bank.new)
+    @bank = bank
   end
 
   def deposit(stdin = $stdin)
