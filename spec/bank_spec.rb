@@ -7,9 +7,9 @@ describe Bank do
 
   describe '#show_statement' do
     it 'should create a new statement object' do
-      statement = class_double('Statement').as_stubbed_const
-      expect(statement).to receive(:new)
-      subject.show_statement
+      statement = class_double('Statement').as_stubbed_const(new: 'Statement')
+      allow(statement).to receive(:new).and_return('Statement')
+      expect(subject.show_statement).to eq('Statement')
     end
   end
 
