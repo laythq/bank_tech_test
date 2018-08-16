@@ -14,10 +14,14 @@ describe Bank do
   end
 
   describe '#deposit' do
-    it 'should create a new Transaction object with a date and time' do
+    it 'should create a new Transaction object and push it to @all_transactions' do
       transaction = class_double('Transaction').as_stubbed_const
       expect(transaction).to receive(:new)
       @bank.deposit(100)
+    end
+
+    it 'should change the balance' do
+      expect{@bank.deposit(100)}.to change{@bank.balance}.by(100)
     end
   end
 
@@ -26,6 +30,10 @@ describe Bank do
       transaction = class_double('Transaction').as_stubbed_const
       expect(transaction).to receive(:new)
       @bank.withdraw(100)
+    end
+
+    it 'should change the balance' do
+      expect{@bank.withdraw(100)}.to change{@bank.balance}.by(-100)
     end
   end
 end

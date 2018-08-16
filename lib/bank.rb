@@ -3,7 +3,7 @@ require_relative 'statement'
 require_relative 'transaction'
 
 class Bank
-  attr_reader :balance
+  attr_reader :balance, :all_transactions
 
   def initialize
     @balance = 0
