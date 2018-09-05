@@ -2,9 +2,7 @@
 
 This is a tech test I attempted over a couple of days. The specification requires it be usable through a REPL, but it can also be used as a command-line app. It is written in Ruby and tested in RSpec to 100% coverage.
 
-## Specification
-
-### Requirements
+### Specifications
 
 * You should be able to interact with your code via a REPL like IRB or the JavaScript console.
 * Deposits, withdrawal.
